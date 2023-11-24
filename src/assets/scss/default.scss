@@ -1,0 +1,21 @@
+html, body {
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navbar { 
+  position: fixed;
+  top: 0;
+}
+
+#container {
+
+}
