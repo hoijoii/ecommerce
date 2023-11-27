@@ -1,16 +1,36 @@
 <template>
   <div id="navbar">
-    <div>
+    <div class="wrapper">
       <div class="title">
-        <div>sneakers</div>
+        <div class="sneakers">sneakers</div>
       </div>
-      <div class="menu"></div>
-      <div class="cart"></div>
-      <div class="profile"></div>
+      <div class="menu">
+        <ul>
+          <li v-for="tab in tabItems" :key="tab.id" class="item">{{ tab.name }}</li>
+        </ul>
+      </div>
+      <div class="cart">
+        <inline-svg :src="require('@/assets/images/icon-cart.svg')"/>
+        <div class="alert" v-if="cartNumber > 0">
+          <div class="num">{{ cartNumber }}</div>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="@/assets/images/image-avatar.png" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang='ts'>
+import { ref, Ref } from 'vue';
+import tabs from '@/assets/data/tabs-info.json';
+import InlineSvg from 'vue-inline-svg';
+
+const tabItems = tabs.MENU;
+
+const cartNumber: Ref<number> = ref(0);
+
+
 
 </script>
