@@ -24,11 +24,17 @@ ul {
   height: 100%;
 }
 
+/*************************************************************
+
+                        Navbar
+
+**************************************************************/
 nav {
   background-color: white;
   border-bottom: 1px solid rgb(243, 243, 243);
   width: 70vw;
   min-width: 900px;
+  max-width: 1440px;
   height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -135,6 +141,149 @@ nav {
           box-shadow: 0 0 0 2px hsl(26, 100%, 55%);
 }
 
-/* .profile img {
-  width: 20px;
-} */
+/*************************************************************
+
+                         SneakersView
+
+**************************************************************/
+#container {
+  width: 70vw;
+  min-width: 900px;
+  max-width: 1440px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.product .images {
+  padding: 8%;
+}
+.product .images .big-img {
+  width: 100%;
+  border-radius: 10px;
+}
+.product .images .thumbnails {
+  padding-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.product .images .thumbnails img {
+  border-radius: 10px;
+  width: 20%;
+}
+.product .description {
+  padding: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+.product .description .texts .company {
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+}
+.product .description .texts .prod-name {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 15px 0px;
+}
+.product .description .texts .prod-desc {
+  color: hsl(219, 9%, 45%);
+  line-height: 25px;
+  margin: 25px 0px;
+}
+.product .description .texts .price {
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.product .description .texts .price .num {
+  font-size: 25px;
+}
+.product .description .texts .price .discount {
+  margin-left: 20px;
+  background-color: hsl(25, 100%, 94%);
+  padding: 3px 7px;
+  color: hsl(26, 100%, 55%);
+  border-radius: 5px;
+}
+.product .description .texts .original {
+  text-decoration: line-through;
+  color: hsla(217, 11%, 59%, 0.949);
+  font-weight: 700;
+}
+.product .description .texts .cart-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  margin: 25px 0;
+}
+.product .description .texts .cart-btn .count, .product .description .texts .cart-btn .add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+}
+.product .description .texts .cart-btn .count {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: hsl(223, 64%, 98%);
+  padding: 0 4%;
+  width: 125px;
+}
+.product .description .texts .cart-btn .count .num {
+  font-weight: 700;
+  margin: 0 30px;
+}
+.product .description .texts .cart-btn .count svg {
+  cursor: pointer;
+}
+.product .description .texts .cart-btn .add {
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding: 0 15%;
+  font-weight: 700;
+  -webkit-box-shadow: hsl(25, 100%, 70%) 0px 25px 20px -20px;
+          box-shadow: hsl(25, 100%, 70%) 0px 25px 20px -20px;
+}
+.product .description .texts .cart-btn .add svg {
+  margin-right: 10px;
+}
+.product .description .texts .cart-btn .add svg path {
+  fill: white !important;
+}
+.product .description .texts .cart-btn .add:hover {
+  background-color: hsl(25, 100%, 85%);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}

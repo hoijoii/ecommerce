@@ -18,11 +18,18 @@ ul {
   height: 100%;
 }
 
+/*************************************************************
+
+                        Navbar
+
+**************************************************************/
+
 nav {
   background-color: white;
   border-bottom: 1px solid rgb(243, 243, 243);
   width: 70vw;
   min-width: 900px;
+  max-width: 1440px;
   height: 80px;
   display: flex;
   align-items: center;
@@ -129,6 +136,145 @@ nav {
   }
 }
 
-/* .profile img {
-  width: 20px;
-} */
+
+/*************************************************************
+
+                         SneakersView
+
+**************************************************************/
+
+#container {
+  width: 70vw;
+  min-width: 900px;
+  max-width: 1440px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .images {
+    padding: 8%;
+    .big-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .thumbnails {
+      padding-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      img {
+        border-radius: 10px;
+        width: 20%;
+      }
+    }
+  }
+
+  .description {
+    padding: 8%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;;
+
+    .texts {
+      .company {
+        color: hsl(26, 100%, 55%);
+        font-weight: 700;
+      }
+
+      .prod-name {
+        font-weight: 700;
+        font-size: 40px;
+        margin: 15px 0px;
+      }
+
+      .prod-desc {
+        color: hsl(219, 9%, 45%);
+        line-height: 25px;
+        margin: 25px 0px;
+      }
+
+      .price {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        
+        .num {
+          font-size: 25px;
+        }
+        .discount {
+          margin-left: 20px;
+          background-color: hsl(25, 100%, 94%);
+          padding: 3px 7px;
+          color: hsl(26, 100%, 55%);
+          border-radius: 5px;
+        }
+      }
+
+      .original {
+        text-decoration: line-through;
+        color: hsla(217, 11%, 59%, 0.949);
+        font-weight: 700;
+      }
+
+      .cart-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        margin: 25px 0; 
+
+        .count, .add {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          font-size: 16px;
+          border-radius: 6px;
+        }
+
+        .count {
+          box-sizing: border-box;
+          background-color: hsl(223, 64%, 98%);
+          padding: 0 4%;
+          width: 125px;
+          justify-content: space-between;
+
+          .num {
+            font-weight: 700;
+          }
+
+          svg {
+            cursor: pointer;
+          }
+        }
+
+        .add {
+          background-color: hsl(26, 100%, 55%);
+          color: white;
+          cursor: pointer;
+          box-sizing: border-box;
+          border: none;
+          outline: none;
+          padding: 0 15%;
+          font-weight: 700;
+          //box-shadow: hsl(25, 100%, 74%) 0px 20px 30px -7px;
+          box-shadow: hsl(25, 100%, 70%) 0px 25px 20px -20px;
+          svg {
+            margin-right: 10px;
+            path {
+              fill: white !important;
+            }
+          }
+
+          &:hover {
+            background-color: hsl(25, 100%, 85%);
+            transition: all 0.1s;
+          }
+        }
+      }
+
+    }
+  }
+}
