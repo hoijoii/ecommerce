@@ -18,6 +18,14 @@ ul {
   height: 100%;
 }
 
+nav, .images, .price, .original, .cart-btn {
+  // no drag
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+
 /*************************************************************
 
                         Navbar
@@ -34,11 +42,6 @@ nav {
   display: flex;
   align-items: center;
 
-  // no drag
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-use-select: none;
-  user-select: none;
 }
 
 #navbar, .wrapper, .title, .menu {
@@ -261,6 +264,13 @@ nav {
 
           svg {
             cursor: pointer;
+
+            &:hover{
+              path { 
+                fill: hsl(25, 100%, 94%); 
+                transition: all 0.15s;
+              }
+            }
           }
         }
 
@@ -284,7 +294,7 @@ nav {
 
           &:hover {
             background-color: hsl(25, 100%, 85%);
-            transition: all 0.1s;
+            transition: all 0.15s;
           }
         }
       }
