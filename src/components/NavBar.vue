@@ -11,8 +11,8 @@
       </div>
       <div class="cart">
         <inline-svg :src="require('@/assets/images/icon-cart.svg')"/>
-        <div class="alert" v-if="cartNumber > 0">
-          <div class="num">{{ cartNumber }}</div>
+        <div class="alert" v-if="commonsStore.cart > 0">
+          <div class="num">{{ commonsStore.cart }}</div>
         </div>
       </div>
       <div class="profile">
@@ -26,11 +26,9 @@
 import { ref, Ref } from 'vue';
 import tabs from '@/assets/data/tabs-info.json';
 import InlineSvg from 'vue-inline-svg';
+import { useCommonsStore } from '@/stores/commons';
 
 const tabItems = tabs.MENU;
-
-const cartNumber: Ref<number> = ref(0);
-
-
+const commonsStore = useCommonsStore();
 
 </script>
