@@ -2,9 +2,11 @@
   <div id="container">
     <div class="product">
       <div class="images">
-        <img :src="require(`@/assets/images/${nowImage}`)" class="big-img">
+        <img :src="require(`@/assets/images/${nowImage.image}`)" class="big-img">
         <div class="thumbnails">
-          <img v-for="img in ImageInfo" :key="img.id" :src="require(`@/assets/images/${img.thumbnail}`)">
+          <div class="thumb" v-for="img in imageInfo" :key="img.id" :class="[{'clicked': img.id === nowImage.id}]">
+            <img :src="require(`@/assets/images/${img.thumbnail}`)" @click="loadDetailImage(img.id)" :class="[{'img-clicked': img.id === nowImage.id}]"/>
+          </div>
         </div>
       </div>
       <div class="description">
@@ -23,7 +25,7 @@
               <div class="num">{{ prodCount }}</div>
               <inline-svg :src="require('@/assets/images/icon-plus.svg')" @click="plus"/>
             </div>
-            <button class="add">
+            <button class="add" @click="addCart">
               <inline-svg :src="require('@/assets/images/icon-cart.svg')"/>
               Add to cart
             </button>
@@ -38,11 +40,21 @@
 import { ref, Ref } from 'vue';
 import productImages from '@/assets/data/prod-imgs.json';
 import InlineSvg from 'vue-inline-svg';
+import { useCommonsStore } from '@/stores/commons'
 
-const ImageInfo = productImages.PRODUCT_IMAGES;
+// STORES
+const commonsStore = useCommonsStore();
 
-const nowImage : Ref<string> = ref("image-product-1.jpg");
+// PRODUCTION DETAILS
+const imageInfo = productImages.PRODUCT_IMAGES;
 
+const nowImage : Ref<any> = ref(imageInfo[0]);
+
+const loadDetailImage = (thumb_id: number):void => {
+  nowImage.value = imageInfo.find((img:any) => img.id === thumb_id)
+}
+
+// CART
 const prodCount : Ref<number> = ref(0);
 
 const plus = () => {
@@ -53,4 +65,8 @@ const minus = () => {
   if (prodCount.value > 0) prodCount.value -= 1;
 }
 
+const addCart = () => {
+  commonsStore.addItem(prodCount.value);
+  prodCount.value = 0
+}
 </script>
